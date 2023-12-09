@@ -48,7 +48,7 @@ function validPassword() {
   check();
 }
 
-form.addEventListener('submit', event => {
+form.addEventListener("submit", event => {
   event.preventDefault();
 
   if (nameValid && passwordValid) {
@@ -57,16 +57,16 @@ form.addEventListener('submit', event => {
   }
 });
 function checkIfUserExists(username, password) {
-  const request = indexedDB.open('registro', 1);
+  const request = indexedDB.open("registro", 1);
   request.onupgradeneeded = event => {
     const db = event.target.result;
-    db.createObjectStore('usuarios', { keyPath: 'username' });
+    db.createObjectStore("usuarios", { keyPath: 'username' });
   };
   request.onsuccess = event => {
     const db = event.target.result;
     //Start a transaction and obtain the object store
-    const transaction = db.transaction(['usuarios'], 'readonly');
-    const store = transaction.objectStore('usuarios');
+    const transaction = db.transaction(['usuarios'], "readonly");
+    const store = transaction.objectStore("usuarios");
     //Check if the user exists
     const requestGet = store.get(username);
     requestGet.onsuccess = () => {
@@ -88,17 +88,17 @@ function checkIfUserExists(username, password) {
   };
 }
 function saveUserToIndexedDB(username, password) {
-  const request = indexedDB.open('registro', 1);
+  const request = indexedDB.open("registro", 1);
 
   request.onupgradeneeded = event => {
     const db = event.target.result;
-    db.createObjectStore('usuarios', { keyPath: 'username' });
+    db.createObjectStore("usuarios", { keyPath: 'username' });
   };
   request.onsuccess = event => {
     const db = event.target.result;
     //start a transaction and obtain the object store
-    const transaction = db.transaction(['usuarios'], 'readwrite');
-    const store = transaction.objectStore('usuarios');
+    const transaction = db.transaction(["usuarios"], "readwrite");
+    const store = transaction.objectStore("usuarios");
     // Add the user to the database
     store.add({ username: username, password: password });
     // Close the database
@@ -107,6 +107,6 @@ function saveUserToIndexedDB(username, password) {
     };
   };
 }
-access.addEventListener('click', () => {
+access.addEventListener("click", () => {
     window.location.href = "html/cocktel.html";
 })

@@ -9,7 +9,7 @@ let instruccions = document.getElementById("instruccions");
 let button = document.getElementById("changeCocktel");
 let container = document.getElementById("cocktailContainer");
 let searchForm = document.querySelector("form");
-let favorite =document.getElementById('favorite');
+let favorite =document.getElementById("favorite");
 
 
 
@@ -24,10 +24,10 @@ function getCocktelRamdom() {
             elementNameAle.innerHTML = data.drinks[0].strDrink;
 
         })
-        .catch(error => console.error('Error fetching Cocktail:', error));
+        .catch(error => console.error("Error fetching Cocktail:", error));
 }
 
-button.addEventListener('click', getCocktelRamdom);
+button.addEventListener("click", getCocktelRamdom);
 
 //Call getRandomCocktail on page load to display a random cocktail initially.
 window.onload = getCocktelRamdom;
@@ -35,9 +35,9 @@ window.onload = getCocktelRamdom;
 const cocktailAPINombre = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`;
 
 //Add an event listener to the form to handle the search
-searchForm.addEventListener('submit', function (event) {
+searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    let searchValue = event.target.querySelector('input').value;
+    let searchValue = event.target.querySelector("input").value;
     // Call the getCocktailByName function with the search value
     getCocktailByName(searchValue);
 });
@@ -56,25 +56,25 @@ function getCocktailByName(name) {
             elementImage.src = data.drinks[0].strDrinkThumb;
             instruccions.innerHTML = "Instructions: " + data.drinks[0].strInstructions;
         })
-        .catch(error => console.error('Error fetching Cocktail:', error));
+        .catch(error => console.error("Error fetching Cocktail:", error));
 }
 //Function that introduces favorite cocktails into indexeddb
-favorite.addEventListener('click', function () {
-    let cocktailName = document.getElementById('name').innerText;
-    let cocktailImage = document.getElementById('imagenCocktel').src;
+favorite.addEventListener("click", function () {
+    let cocktailName = document.getElementById("name").innerText;
+    let cocktailImage = document.getElementById("imagenCocktel").src;
     // Open database
-    let request = indexedDB.open('CocktailsDB', 1);
+    let request = indexedDB.open("CocktailsDB", 1);
 
     request.onupgradeneeded = function (e) {
         let db = e.target.result;
-        if (!db.objectStoreNames.contains('favorites')) {
-            db.createObjectStore('favorites', { keyPath: 'name' });
+        if (!db.objectStoreNames.contains("favorites")) {
+            db.createObjectStore("favorites", { keyPath: "name" });
         }
     };
     request.onsuccess = function (e) {
         let db = e.target.result;
-        let tx = db.transaction('favorites', 'readwrite');
-        let store = tx.objectStore('favorites');
+        let tx = db.transaction("favorites", "readwrite");
+        let store = tx.objectStore("favorites");
         // Store the cocktail in the database
         store.put({ name: cocktailName, image: cocktailImage });
 
@@ -83,6 +83,6 @@ favorite.addEventListener('click', function () {
         };
     };
     // Open the bookmarks page in a new tab
-    window.open('../html/favorites.html', '_blank');
+    window.open("../html/favorites.html");
 });
 
