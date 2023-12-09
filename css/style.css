@@ -168,7 +168,7 @@ input[type="search"] {
     /* This means the card will grow and shrink as needed, and won't be smaller than 200px */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
     .navbar-brand {
         font-size: 20px;
     }
