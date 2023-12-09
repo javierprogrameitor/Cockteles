@@ -164,8 +164,6 @@ input[type="search"] {
 
 .card {
     margin: 20px;
-    flex: 1 0 200px;
-    /* This means the card will grow and shrink as needed, and won't be smaller than 200px */
 }
 
 @media (max-width: 400px) {
