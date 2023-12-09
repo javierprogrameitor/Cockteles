@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/login.js" defer></script>
+    <title>LogingCocktelApi</title>
+</head>
+
+<body>
+
+    <div class="logincontainer">
+        <h2>Start Session</h2>
+        <form id="loginForm">
+            <div class="inputContainer">
+                <label for="username">User:</label>
+                <input id="user" type="text" name="username" placeholder="user" required>
+                <small> </small>
+            </div>
+            <div class="inputContainer">
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="password" placeholder="pass" required>
+                <small> </small>
+            </div>
+            <div class="inputContainer">
+                <label for="checkbox">Do you accept the terms and conditions?
+                    <input id="micheckbox" type="checkbox" name="micheckbox" required>
+                </label>
+                <small> </small>
+                <p id="parrafo">
+                    By logging in you accept our Terms of Use.
+                    Consult our Privacy Notice, our Cookies Notice and
+                    our Notice about advertising based on user interests.
+                </p>
+            </div>
+            <div class="inputContainer">
+            <button id="button" type="submit" class="notAvailable">Create Account</button>
+            </div>
+            <div class="inputContainer">
+                <small> </small>
+                <button id="access" type="submit" class="notAvailable">To access</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
