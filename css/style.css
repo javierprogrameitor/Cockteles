@@ -77,7 +77,14 @@ h2 {
 }
 
 small {
-    color: #2fda11;
+    color: #da1e11;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.yesAvailable {
+    color: #2a6811;
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
