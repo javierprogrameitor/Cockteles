@@ -42,17 +42,11 @@ body {
 .logincontainer {
     display: block;
     border: 2px solid #8338ec;
-    /* Borde del div */
     padding: 20px;
-    /* Espaciado interno */
     width: 400px;
-    /* Ancho del div */
     margin: 100px auto;
-    /* Centrar horizontalmente */
     border-radius: 5px;
-    /* Bordes redondeados */
     box-shadow: 0 10px 15px rgba(0, 5, 5, 5);
-    /* Sombra */
 }
 
 .inputContainer {
@@ -83,7 +77,7 @@ h2 {
 }
 
 small {
-    color: #da1e11;
+    color: #2fda11;
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
